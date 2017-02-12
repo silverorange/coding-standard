@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<ruleset name="SilverorangeLegacy">
+  <description>Legacy coding standard for silverorange packages. Do not use for new projects.</description>
+  <rule ref="Generic.Classes.DuplicateClassName"/>
+
+  <rule ref="Generic.CodeAnalysis.EmptyStatement"/>
+  <rule ref="Generic.CodeAnalysis.UnconditionalIfStatement"/>
+  <rule ref="Generic.CodeAnalysis.UnnecessaryFinalModifier"/>
+  <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+  <rule ref="Generic.CodeAnalysis.UselessOverridingMethod"/>
+
+  <rule ref="Generic.Commenting.Fixme"/>
+  <rule ref="Generic.Commenting.Todo"/>
+
+  <rule ref="Generic.Files.ByteOrderMark"/>
+  <rule ref="Generic.Files.EndFileNewline"/>
+  <rule ref="Generic.Files.LineLength"/>
+  <rule ref="Generic.Files.LineEndings"/>
+  <rule ref="Generic.Files.OneClassPerFile"/>
+  <rule ref="Generic.Files.OneInterfacePerFile"/>
+  <rule ref="Generic.Files.OneTraitPerFile"/>
+
+  <rule ref="Generic.Formatting.DisallowMultipleStatements"/>
+  <rule ref="Generic.Formatting.NoSpaceAfterCast"/>
+
+  <rule ref="Generic.Functions.CallTimePassByReference"/>
+  <rule ref="Generic.Functions.FunctionCallArgumentSpacing"/>
+  <rule ref="Generic.Functions.OpeningFunctionBraceBsdAllman"/>
+
+  <!-- rule ref="Generic.Metrics.CyclomaticComplexity"/ -->
+  <rule ref="Generic.Metrics.NestingLevel"/>
+
+  <rule ref="Generic.NamingConventions.ConstructorName"/>
+  <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+
+  <rule ref="Generic.PHP.CharacterBeforePHPOpeningTag"/>
+  <rule ref="Generic.PHP.ClosingPHPTag"/>
+  <rule ref="Generic.PHP.DeprecatedFunctions"/>
+  <rule ref="Generic.PHP.DisallowAlternativePHPTags"/>
+  <rule ref="Generic.PHP.DisallowShortOpenTag"/>
+  <rule ref="Generic.PHP.ForbiddenFunctions">
+    <properties>
+     <property name="forbiddenFunctions" type="array" value="sizeof=>count,delete=>unset,print=>echo,strcmp=>==,var_dump=>''" />
+    </properties>
+  </rule>
+  <rule ref="Generic.PHP.LowerCaseConstant"/>
+  <rule ref="Generic.PHP.LowerCaseKeyword"/>
+  <rule ref="Generic.PHP.NoSilencedErrors"/>
+  <rule ref="Generic.PHP.Syntax"/>
+
+  <rule ref="Generic.Whitespace.DisallowSpaceIndent"/>
+
+  <!--
+    Use PEAR instead of Generic so we get non-indented switch scope
+  -->
+  <rule ref="PEAR.Whitespace.ScopeIndent">
+    <properties>
+      <property name="indent" type="integer" value="4"/>
+      <property name="tabIndent" type="boolean" value="true"/>
+    </properties>
+  </rule>
+
+  <rule ref="PSR1.Methods.CamelCapsMethodName"/>
+
+  <rule ref="PSR2.Classes.PropertyDeclaration"/>
+
+  <!--
+    Use Squiz instead of PRS2 to get required blank line after class
+    defintion.
+  -->
+  <rule ref="Squiz.Classes.ClassDeclaration"/>
+  <rule ref="Squiz.Classes.ClassDeclaration.InterfaceSameLine">
+    <severity>0</severity>
+  </rule>
+  <rule ref="Squiz.Classes.ClassDeclaration.InterfaceWrongIndent">
+    <severity>0</severity>
+  </rule>
+  <rule ref="Squiz.Classes.ClassDeclaration.ImplementsLine">
+    <severity>0</severity>
+  </rule>
+  <rule ref="Squiz.Classes.ClassDeclaration.FirstInterfaceSameLine">
+    <severity>0</severity>
+  </rule>
+  <rule ref="Squiz.Classes.ClassFileName"/>
+  <rule ref="Squiz.Classes.SelfMemberReference"/>
+  <rule ref="Squiz.Classes.ValidClassName"/>
+
+  <!--rule ref="Squiz.ControlStructures.ControlSignature"/-->
+
+  <rule ref="Squiz.Functions.FunctionDuplicateArgument"/>
+
+  <rule ref="Squiz.Operators.ValidLogicalOperators"/>
+
+  <rule ref="Squiz.PHP.DisallowMultipleAssignments"/>
+  <rule ref="Squiz.PHP.Eval">
+    <severity>5</severity>
+  </rule>
+  <rule ref="Squiz.PHP.GlobalKeyword"/>
+  <rule ref="Squiz.PHP.InnerFunctions"/>
+  <rule ref="Squiz.PHP.LowercasePHPFunctions"/>
+  <rule ref="Squiz.PHP.NonExecutableCode"/>
+
+  <rule ref="Squiz.Scope.MemberVarScope"/>
+  <rule ref="Squiz.Scope.MethodScope"/>
+  <rule ref="Squiz.Scope.StaticThisUsage"/>
+
+  <!-- No space around concatenation operators. -->
+  <rule ref="Squiz.Strings.ConcatenationSpacing">
+    <properties>
+     <property name="ignoreNewlines" type="boolean" value="true" />
+    </properties>
+  </rule>
+  <rule ref="Squiz.Strings.EchoedStrings"/>
+
+  <rule ref="Squiz.Whitespace.CastSpacing"/>
+  <!-- rule ref="Squiz.Whitespace.ControlStructureSpacing"/ -->
+  <rule ref="Squiz.Whitespace.FunctionOpeningBraceSpace"/>
+  <rule ref="Squiz.Whitespace.FunctionSpacing">
+    <properties>
+      <property name="spacing" type="integer" value="1" />
+    </properties>
+  </rule>
+  <rule ref="Squiz.Whitespace.LanguageConstructSpacing"/>
+  <rule ref="Squiz.Whitespace.LogicalOperatorSpacing"/>
+  <rule ref="Squiz.Whitespace.ObjectOperatorSpacing"/>
+  <rule ref="Squiz.Whitespace.ScopeClosingBrace"/>
+  <rule ref="Squiz.Whitespace.ScopeKeywordSpacing"/>
+  <rule ref="Squiz.Whitespace.SemicolonSpacing"/>
+  <rule ref="Squiz.Whitespace.SuperfluousWhitespace"/>
+
+  <!--
+    Custom sniff that enforces whitespace around operators except when a
+    newline is present. Customized for silverorange to require no space before
+    the concat equals operator (.=).
+  -->
+  <rule ref="SilverorangeLegacy.Whitespace.OperatorSpacing">
+    <properties>
+     <property name="ignoreNewlines" type="boolean" value="true" />
+    </properties>
+  </rule>
+</ruleset>

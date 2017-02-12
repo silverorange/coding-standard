@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<ruleset name="Silverorange">
+  <description>Silverorange coding standards for modern packages based on the PSR-2 standard.</description>
+
+  <!--
+    Import entire PSR-2 standard.
+  -->
+  <rule ref="PRS2" />
+</ruleset>
