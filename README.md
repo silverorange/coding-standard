@@ -26,6 +26,13 @@ $ composer require --dev silverorange/coding_standard squizlabs/phpcs
 <?xml version="1.0"?>
 <ruleset name="MyProjectName">
   <description>A custom coding standard.</description>
+
+  <arg name="colors"/>
+  <arg name="tab-width" value="4"/>
+  <arg name="extensions" value="php"/>
+  <arg name="encoding" value="utf-8"/>
+  <arg name="warning-severity" value="0"/>
+
   <rule src="SilverorangeLegacy"/>
 </ruleset>
 ```
@@ -58,8 +65,8 @@ $ composer require --dev silverorange/coding_standard squizlabs/phpcs
 language: php
 php:
   - '5.6'
-  install: composer install
-  script: ./vendor/bin/phpcs --ruleset=ruleset-transitional.xml $(git diff --name-only HEAD~1)
+install: composer install
+script: ./vendor/bin/phpcs --ruleset=ruleset-transitional.xml $(git diff --name-only HEAD~1)
 ```
 
 Rulesets
