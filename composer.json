@@ -3,7 +3,7 @@
   "description": "Silverorange PHP coding standards.",
   "type": "library",
   "keywords": [ "silverorange", "phpcs" ],
-  "homepage": "https://githib/com/silverorange/coding_standard",
+  "homepage": "https://github.com/silverorange/coding_standard",
   "license": "BSD",
   "authors": [
     {
