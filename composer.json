@@ -1,0 +1,20 @@
+{
+  "name": "silverorange/coding_standard",
+  "description": "Silverorange PHP coding standards.",
+  "type": "library",
+  "keywords": [ "silverorange", "phpcs" ],
+  "homepage": "https://githib/com/silverorange/coding_standard",
+  "license": "BSD",
+  "authors": [
+    {
+      "name": "Michael Gauthier",
+      "email": "mike@silverorange.com"
+    },
+  ],
+  "require": {
+    "squizlabs/php_codesniffer": "^2.8"
+  },
+  "autoload": {
+    "psr-4": { "silverorange\\CodingStandard\\" : "src/" }
+  }
+}
