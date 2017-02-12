@@ -21,7 +21,7 @@ $ composer require --dev silverorange/coding_standard squizlabs/phpcs
 }
 ```
 
-### 3. create a ruleset.xml and ruleset-transitional.xml
+### 3. create a phpcs.xml and phpcs.transitional.xml
 ```xml
 <?xml version="1.0"?>
 <ruleset name="MyProjectName">
@@ -66,7 +66,7 @@ language: php
 php:
   - '5.6'
 install: composer install
-script: ./vendor/bin/phpcs --ruleset=ruleset-transitional.xml $(git diff --name-only HEAD~1)
+script: ./vendor/bin/phpcs --ruleset=phpcs.transitional.xml $(git diff --name-only HEAD~1)
 ```
 
 Rulesets
