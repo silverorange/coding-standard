@@ -4,7 +4,7 @@
   "type": "library",
   "keywords": [ "silverorange", "phpcs" ],
   "homepage": "https://github.com/silverorange/coding_standard",
-  "license": "BSD",
+  "license": "MIT",
   "authors": [
     {
       "name": "Michael Gauthier",
