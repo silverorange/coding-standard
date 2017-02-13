@@ -1,5 +1,7 @@
 silverorange Coding Standards
 =============================
+[![Build Status](https://travis-ci.org/silverorange/coding-standard.svg?branch=master)](https://travis-ci.org/silverorange/coding-standard)
+
 Coding standards for silverorange PHP projects. These are rulesets to be used
 with the [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer/wiki) tool.
 
