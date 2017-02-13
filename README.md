@@ -21,7 +21,7 @@ $ composer require --dev silverorange/coding-standard squizlabs/phpcs
 }
 ```
 
-### 3. create a phpcs.xml and phpcs.transitional.xml
+### 3. create a phpcs.xml
 ```xml
 <?xml version="1.0"?>
 <ruleset name="MyProjectName">
@@ -34,20 +34,6 @@ $ composer require --dev silverorange/coding-standard squizlabs/phpcs
   <arg name="warning-severity" value="0"/>
 
   <rule src="SilverorangeLegacy"/>
-</ruleset>
-```
-```xml
-<?xml version="1.0"?>
-<ruleset name="MyProjectName">
-  <description>A custom coding standard.</description>
-
-  <arg name="colors"/>
-  <arg name="tab-width" value="4"/>
-  <arg name="extensions" value="php"/>
-  <arg name="encoding" value="utf-8"/>
-  <arg name="warning-severity" value="0"/>
-
-  <rule src="SilverorangeTransitional"/>
 </ruleset>
 ```
 
@@ -66,7 +52,7 @@ language: php
 php:
   - '5.6'
 install: composer install
-script: ./vendor/bin/phpcs --ruleset=phpcs.transitional.xml $(git diff --name-only HEAD~1)
+script: ./vendor/bin/phpcs --ruleset=SilverorangeTransitional $(git diff --name-only HEAD~1)
 ```
 
 Rulesets
