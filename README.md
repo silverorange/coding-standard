@@ -60,7 +60,7 @@ $ composer require --dev silverorange/coding-standard squizlabs/phpcs
 }
 ```
 
-### 5. create a .travisci.yml file to enforce the rules
+### 5. create a .travis.yml file to enforce the rules
 ```yml
 language: php
 php:
