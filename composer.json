@@ -1,6 +1,6 @@
 {
-  "name": "silverorange/coding_standard",
-  "description": "Silverorange PHP coding standards.",
+  "name": "silverorange/coding-standard",
+  "description": "silverorange PHP coding standards.",
   "type": "library",
   "keywords": [ "silverorange", "phpcs" ],
   "homepage": "https://github.com/silverorange/coding_standard",
