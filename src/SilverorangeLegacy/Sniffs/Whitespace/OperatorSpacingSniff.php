@@ -36,6 +36,7 @@ class SilverorangeLegacy_Sniffs_WhiteSpace_OperatorSpacingSniff extends Squiz_Sn
 {
     public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
     {
+
         $tokens = $phpcsFile->getTokens();
 
         // Skip default values in function declarations.
