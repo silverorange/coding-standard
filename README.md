@@ -9,14 +9,14 @@ To use these rules for a project:
 
 ### 1. install as a require-dev dependency using composer
 ```sh
-$ composer require --dev silverorange/coding_standard squizlabs/phpcs
+$ composer require --dev silverorange/coding-standard squizlabs/phpcs
 ```
 
 ### 2. add a post-install-cmd to register the coding standard with phpcs
 ```json
 {
   "scripts": {
-    "post-install-cmd": "./vendor/bin/phpcs --config-set installed_paths vendor/bin/silverorange/coding_standards/src"
+    "post-install-cmd": "./vendor/bin/phpcs --config-set installed_paths vendor/bin/silverorange/coding-standard/src"
   }
 }
 ```
