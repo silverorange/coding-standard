@@ -52,7 +52,14 @@ language: php
 php:
   - '5.6'
 install: composer install
-script: ./vendor/bin/phpcs --ruleset=SilverorangeTransitional $(git diff --name-only HEAD~1)
+script:
+  - ./vendor/bin/phpcs
+    --ruleset=SilverorangeTransitional
+    --tab-width=4
+    --encoding=utf-8
+    --warning-severity=0
+    --extensions=php
+    $(git diff --name-only HEAD~1)
 ```
 
 Rulesets
