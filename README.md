@@ -81,3 +81,40 @@ for all modified files in a new pull request.
 
 ### Silverorange
 Based on PSR2. This should be used for all new silverorange PHP packages.
+
+Sublime Setup
+-------------
+If you are using Sublime Text:
+
+1. Install PHPCS and and the coding standard locally.
+
+2. Set up Sublime Linter with PHPCS as described [here](https://github.com/SublimeLinter/SublimeLinter-phpcs).
+
+3. In the Sublime Linter settings, update the following settings (do not remove the other settings):
+
+```
+{
+    "user": {
+        "linters": {
+            "php": {
+                "@disable": false,
+                "args": [],
+                "excludes": []
+            },
+            "phpcs": {
+                "@disable": false,
+                "args": [
+                ],
+                "encoding": "utf-8",
+                "excludes": [],
+                "extensions": "php",
+                "standard": "~/.composer/vendor/bin/silverorange/coding-standard/src/Silverorange/ruleset.xml",
+                "tabWidth":
+            }
+        },
+        "phpcs_executable_path": "~/.composer/vendor/bin/phpcs"
+    }
+}
+
+```
+**Note** that this will fix you to a specific ruleset and would need to be updated when switching rulesets.
