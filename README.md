@@ -61,7 +61,7 @@ script:
     --encoding=utf-8
     --warning-severity=0
     --extensions=php
-    $(git diff --name-only HEAD~1)
+    $(git diff --name-only HEAD~1 | grep '\.php$')
 ```
 
 Rulesets
