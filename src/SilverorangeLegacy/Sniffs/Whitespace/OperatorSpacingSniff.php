@@ -38,6 +38,7 @@ class SilverorangeLegacy_Sniffs_WhiteSpace_OperatorSpacingSniff extends Squiz_Sn
     {
         $tokens = $phpcsFile->getTokens();
 
+
         // Skip default values in function declarations.
         if ($tokens[$stackPtr]['code'] === T_EQUAL
             || $tokens[$stackPtr]['code'] === T_MINUS
@@ -56,7 +57,7 @@ class SilverorangeLegacy_Sniffs_WhiteSpace_OperatorSpacingSniff extends Squiz_Sn
             }
         }
 
-        if ($tokens[$stackPtr]['code'] === T_EQUAL) {
+        if($tokens[$stackPtr]['code'] === T_EQUAL) {
             // Skip for '=&' case.
             if (isset($tokens[($stackPtr + 1)]) === true
                 && $tokens[($stackPtr + 1)]['code'] === T_BITWISE_AND
