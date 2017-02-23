@@ -73,6 +73,8 @@ Intended for linting the entire project for a legacy package. This omits some
 rules we'd like to use for new code written for legacy packages in order to
 run without error. It is not recommended to use this standard for new projects.
 
+[Documentation](doc/legacy/README.md) exists for the legacy standard.
+
 ### SilverorangeTransitional
 Intended for use as a post-commit hook or CI test. This ensures all new code
 added to legacy packages follows best practices within the legacy guidelines.
