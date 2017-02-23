@@ -13,7 +13,7 @@ This should not be used for new projects.
  * [Code Folding Markers for Vim](Code-Folding.md)
  * [Writing Commit Messages](Commit-Messages.md)
  * [Documentation for Classes and Methods](Documentation.md)
- * [Vim Modeline](Editor-Modeline.md)
+ * [Vim Modeline](Editor-Modelines.md)
  * [File Format and Encoding](File-Format.md)
  * [PHP References vs Values](References-and-Values.md)
  * [Regular Expressions](Regular-Expressions.md)
