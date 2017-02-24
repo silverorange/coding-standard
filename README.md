@@ -86,11 +86,38 @@ Sublime Setup
 -------------
 If you are using Sublime Text:
 
-1. Install PHPCS and and the coding standard locally.
+1. Install PHPCS on your local machine:
 
-2. Set up Sublime Linter with PHPCS as described [here](https://github.com/SublimeLinter/SublimeLinter-phpcs).
+```
+$ composer global require "squizlabs/php_codesniffer=*"
+```
 
-3. In the Sublime Linter settings, update the following settings (do not remove the other settings):
+2. Install the coding standard on your local machine:
+
+```
+$ composer global config repositories.coding-standard vcs https://github.com/silverorange/coding-standard
+$ composer global require "silverorange/coding-standard=dev-master"
+```
+
+3. Set up Sublime Linter with PHPCS as described [here](https://github.com/SublimeLinter/SublimeLinter-phpcs).
+
+4. Create a local phpcs.xml for the standard you want to use. This can be stored anywhere on your local disk.
+
+```
+<?xml version="1.0"?>
+<ruleset name="Silverorange">
+  <description>Silverorange Coding Standard</description>
+
+  <arg name="tab-width" value="4"/>
+  <arg name="extensions" value="php"/>
+  <arg name="encoding" value="utf-8"/>
+
+  <rule ref="~/.composer/vendor/silverorange/coding-standard/src/Silverorange/ruleset.xml"/>
+</ruleset>
+
+```
+
+5. In the Sublime Linter settings, update the following settings (do not remove the other settings):
 
 ```
 {
@@ -105,11 +132,7 @@ If you are using Sublime Text:
                 "@disable": false,
                 "args": [
                 ],
-                "encoding": "utf-8",
-                "excludes": [],
-                "extensions": "php",
-                "standard": "~/.composer/vendor/bin/silverorange/coding-standard/src/Silverorange/ruleset.xml",
-                "tabWidth":
+                "standard": "~/Code/custom-rulesets/phpcs.xml"
             }
         },
         "phpcs_executable_path": "~/.composer/vendor/bin/phpcs"
