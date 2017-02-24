@@ -140,4 +140,7 @@ $ composer global require "silverorange/coding-standard=dev-master"
 }
 
 ```
+
+(Where phpcs_executable_path points to the file made in step 4.)
+
 **Note** that this will fix you to a specific ruleset and would need to be updated when switching rulesets.
