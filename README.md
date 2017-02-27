@@ -82,7 +82,13 @@ This includes rules that will not pass for the entire project, but should pass
 for all modified files in a new pull request.
 
 ### Silverorange
-Based on PSR2. This should be used for all new silverorange PHP packages.
+Based on [PSR-2](http://www.php-fig.org/psr/psr-2/). This should be used for
+all new silverorange PHP packages. PSR-2 builds on, and includes all rules
+from [PSR-1](http://www.php-fig.org/psr/psr-1/)
+
+For autoloading classes, projects must follow
+[PSR-4](http://www.php-fig.org/psr/psr-4/). This allows efficient auto-loading
+and promotes organizing code using namespaces.
 
 Sublime Setup
 -------------
