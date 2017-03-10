@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <ruleset name="SilverorangeTransitional">
   <description>A custom coding standard.</description>
-  <description>Silverorange transitional standards for legacy packages. Intented to be used for post-commit automated tests. This is a stricter set of rules than SilverorangeLegacy.</description>
+  <description>Silverorange transitional standards for legacy packages. Intended to be used for post-commit automated tests. This is a stricter set of rules than SilverorangeLegacy.</description>
 
   <!--
     Import entire SilverorangeLegacy standard.
