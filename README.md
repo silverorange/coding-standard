@@ -14,11 +14,13 @@ To use these rules for a project:
 $ composer require --dev silverorange/coding-standard squizlabs/phpcs
 ```
 
-### 2. add a post-install-cmd to register the coding standard with phpcs
+### 2. add a `post-install-cmd` and `post-update-cmd` to register the coding standard with phpcs
+Post install and post update are both required because `composer install` without a lock file will not execute the `post-install-cmd` script.
 ```json
 {
   "scripts": {
     "post-install-cmd": "./vendor/bin/phpcs --config-set installed_paths vendor/bin/silverorange/coding-standard/src"
+    "post-update-cmd": "./vendor/bin/phpcs --config-set installed_paths vendor/bin/silverorange/coding-standard/src"
   }
 }
 ```
