@@ -5,4 +5,5 @@ install: composer install
 script:
   - >-
       ./vendor/bin/phpcs
-      $(git diff --name-only HEAD~1 | grep '\.php$')
+      --extensions=php
+      $(git diff --name-only HEAD~1)

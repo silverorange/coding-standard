@@ -2,7 +2,7 @@ silverorange Coding Standards
 =============================
 [![Build Status](https://travis-ci.org/silverorange/coding-standard.svg?branch=master)](https://travis-ci.org/silverorange/coding-standard)
 
-Coding standards for silverorange PHP projects. These are rulesets to be used
+Coding standards for silverorange PHP projects. These are standards to be used
 with the [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer/wiki) tool.
 
 Usage
@@ -49,6 +49,7 @@ $ composer require --dev silverorange/coding-standard squizlabs/phpcs
 ```
 
 ### 5. create a .travis.yml file to enforce the rules
+For new packages:
 ```yml
 language: php
 php:
@@ -57,18 +58,35 @@ install: composer install
 script:
   - >-
       ./vendor/bin/phpcs
-      --ruleset=SilverorangeTransitional
+      --standard=Silverorange
+      --encoding=utf-8
+      --warning-severity=0
+      --extensions=php
+      $(git diff --name-only HEAD~1)
+---
+```
+
+For legacy packages:
+```yml
+language: php
+php:
+  - '5.6'
+install: composer install
+script:
+  - >-
+      ./vendor/bin/phpcs
+      --standard=SilverorangeTransitional
       --tab-width=4
       --encoding=utf-8
       --warning-severity=0
       --extensions=php
-      $(git diff --name-only HEAD~1 | grep '\.php$')
+      $(git diff --name-only HEAD~1)
 ---
 ```
 
-Rulesets
---------
-Three rulesets are provided:
+Standards
+---------
+Three standards are provided:
 
 ### SilverorangeLegacy
 Intended for linting the entire project for a legacy package. This omits some
