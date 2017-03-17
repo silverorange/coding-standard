@@ -48,12 +48,12 @@
   <rule ref="Generic.PHP.NoSilencedErrors"/>
   <rule ref="Generic.PHP.Syntax"/>
 
-  <rule ref="Generic.Whitespace.DisallowSpaceIndent"/>
+  <rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/>
 
   <!--
     Use PEAR instead of Generic so we get non-indented switch scope
   -->
-  <rule ref="PEAR.Whitespace.ScopeIndent">
+  <rule ref="PEAR.WhiteSpace.ScopeIndent">
     <properties>
       <property name="indent" type="integer" value="4"/>
       <property name="tabIndent" type="boolean" value="true"/>
@@ -112,28 +112,28 @@
   </rule>
   <rule ref="Squiz.Strings.EchoedStrings"/>
 
-  <rule ref="Squiz.Whitespace.CastSpacing"/>
-  <!-- rule ref="Squiz.Whitespace.ControlStructureSpacing"/ -->
-  <rule ref="Squiz.Whitespace.FunctionOpeningBraceSpace"/>
-  <rule ref="Squiz.Whitespace.FunctionSpacing">
+  <rule ref="Squiz.WhiteSpace.CastSpacing"/>
+  <!-- rule ref="Squiz.WhiteSpace.ControlStructureSpacing"/ -->
+  <rule ref="Squiz.WhiteSpace.FunctionOpeningBraceSpace"/>
+  <rule ref="Squiz.WhiteSpace.FunctionSpacing">
     <properties>
       <property name="spacing" type="integer" value="1" />
     </properties>
   </rule>
-  <rule ref="Squiz.Whitespace.LanguageConstructSpacing"/>
-  <rule ref="Squiz.Whitespace.LogicalOperatorSpacing"/>
-  <rule ref="Squiz.Whitespace.ObjectOperatorSpacing"/>
-  <rule ref="Squiz.Whitespace.ScopeClosingBrace"/>
-  <rule ref="Squiz.Whitespace.ScopeKeywordSpacing"/>
-  <rule ref="Squiz.Whitespace.SemicolonSpacing"/>
-  <rule ref="Squiz.Whitespace.SuperfluousWhitespace"/>
+  <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
+  <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
+  <rule ref="Squiz.WhiteSpace.ObjectOperatorSpacing"/>
+  <rule ref="Squiz.WhiteSpace.ScopeClosingBrace"/>
+  <rule ref="Squiz.WhiteSpace.ScopeKeywordSpacing"/>
+  <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
+  <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
 
   <!--
     Custom sniff that enforces whitespace around operators except when a
     newline is present. Customized for silverorange to require no space before
     the concat equals operator (.=).
   -->
-  <rule ref="SilverorangeLegacy.Whitespace.OperatorSpacing">
+  <rule ref="SilverorangeLegacy.WhiteSpace.OperatorSpacing">
     <properties>
      <property name="ignoreNewlines" type="boolean" value="true" />
     </properties>

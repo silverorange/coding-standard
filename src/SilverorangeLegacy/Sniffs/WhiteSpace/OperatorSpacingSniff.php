@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Contains code adapted from Squiz_Sniffs_Whitespace_OperatorSpacingSniff
+ * Contains code adapted from Squiz_Sniffs_WhiteSpace_OperatorSpacingSniff
  * used under the following license:
  *
  *  Copyright (c) 2012, Squiz Pty Ltd (ABN 77 084 670 600)
@@ -32,7 +32,7 @@
  *  POSSIBILITY OF SUCH DAMAGE.
  */
 
-class SilverorangeLegacy_Sniffs_WhiteSpace_OperatorSpacingSniff extends Squiz_Sniffs_Whitespace_OperatorSpacingSniff
+class SilverorangeLegacy_Sniffs_WhiteSpace_OperatorSpacingSniff extends Squiz_Sniffs_WhiteSpace_OperatorSpacingSniff
 {
     public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
     {
