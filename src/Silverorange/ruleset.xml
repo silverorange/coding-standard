@@ -5,5 +5,5 @@
   <!--
     Import entire PSR-2 standard.
   -->
-  <rule ref="PRS2" />
+  <rule ref="PSR2" />
 </ruleset>
