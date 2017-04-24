@@ -114,35 +114,39 @@ Sublime Setup
 -------------
 If you are using Sublime Text:
 
-1. Install PHPCS and and the coding standard locally.
+1. Set up Sublime Linter with PHPCS as described [here](https://github.com/SublimeLinter/SublimeLinter-phpcs).
 
-2. Set up Sublime Linter with PHPCS as described [here](https://github.com/SublimeLinter/SublimeLinter-phpcs).
-
-3. In the Sublime Linter settings, update the following settings (do not remove the other settings):
+2. In the Sublime Linter settings, make sure you have the following settings (do not remove the other settings):
 
 ```
 {
     "user": {
         "linters": {
-            "php": {
-                "@disable": false,
-                "args": [],
-                "excludes": []
-            },
             "phpcs": {
                 "@disable": false,
-                "args": [
-                ],
-                "encoding": "utf-8",
-                "excludes": [],
-                "extensions": "php",
-                "standard": "~/.composer/vendor/bin/silverorange/coding-standard/src/Silverorange/ruleset.xml",
-                "tabWidth":
+                "args": []
             }
-        },
-        "phpcs_executable_path": "~/.composer/vendor/bin/phpcs"
+        }
     }
 }
 
 ```
-**Note** that this will fix you to a specific ruleset and would need to be updated when switching rulesets.
+
+3. Create a Sublime project in the project root.
+
+4. Add the following to the Sublime project settings:
+
+```
+{
+    "SublimeLinter": {
+        "linters": {
+            "phpcs": {
+                "phpcs_executable_path": "{project}/vendor/bin/phpcs"
+            }
+        }
+    }
+}
+
+```
+
+This will allow you to use different rulesets with different projects.
