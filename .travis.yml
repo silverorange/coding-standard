@@ -6,4 +6,4 @@ script:
   - >-
       ./vendor/bin/phpcs
       --extensions=php
-      $(git diff --name-only HEAD~1)
+      $(git diff --diff-filter=ACRM --name-only HEAD~1)
