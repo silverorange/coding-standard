@@ -14,6 +14,11 @@ To use these rules for a project:
 $ composer require --dev silverorange/coding-standard squizlabs/phpcs
 ```
 
+### 1.a install globally
+```sh
+$ composer global require silverorange/coding-standard:dev-master
+```
+
 ### 2. add a `post-install-cmd` and `post-update-cmd` to register the coding standard with phpcs
 Post install and post update are both required because `composer install` without a lock file will not execute the `post-install-cmd` script.
 ```json
@@ -23,6 +28,12 @@ Post install and post update are both required because `composer install` withou
     "post-update-cmd": "./vendor/bin/phpcs --config-set installed_paths vendor/bin/silverorange/coding-standard/src"
   }
 }
+```
+
+### 2.a set global phpcs standard. The first command will add the directory to the list of paths phpcs will check for coding standards.  You can use commas to delineate multiple paths.  The second command is optional and will set the default standard that phpcs will use.
+```sh
+$ phpcs —config-set installed_paths ~/.composer/vendor/silverorange/coding-standard/src
+$ phpcs —config-set default_standard SilverorangeLegacy
 ```
 
 ### 3. create a phpcs.xml
@@ -152,3 +163,12 @@ If you are using Sublime Text:
 ```
 
 This will allow you to use different rulesets with different projects.
+
+Atom Setup
+----------
+If you are using Atom:
+
+1. Set up linter-phpcs as described [here](https://atom.io/packages/linter-phpcs).
+
+2. Open the package settings for linter-phpcs and set `Coding Standard Or Config File` to `SilverorangeLegacy` or whichever current coding standard you are using.  Also set the `Tab Width` field to `4`
+
