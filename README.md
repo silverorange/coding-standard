@@ -5,18 +5,14 @@ silverorange Coding Standards
 Coding standards for silverorange PHP projects. These are standards to be used
 with the [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer/wiki) tool.
 
-Usage
------
-To use these rules for a project:
+Per-Project Usage
+-----------------
+per-project configuration is preferred over global configuration but does
+require support to be added to the project. To use these rules for a project:
 
 ### 1. install as a require-dev dependency using composer
 ```sh
 $ composer require --dev silverorange/coding-standard squizlabs/phpcs
-```
-
-### 1.a install globally
-```sh
-$ composer global require silverorange/coding-standard:dev-master
 ```
 
 ### 2. add a `post-install-cmd` and `post-update-cmd` to register the coding standard with phpcs
@@ -28,12 +24,6 @@ Post install and post update are both required because `composer install` withou
     "post-update-cmd": "./vendor/bin/phpcs --config-set installed_paths vendor/bin/silverorange/coding-standard/src"
   }
 }
-```
-
-### 2.a set global phpcs standard. The first command will add the directory to the list of paths phpcs will check for coding standards.  You can use commas to delineate multiple paths.  The second command is optional and will set the default standard that phpcs will use.
-```sh
-$ phpcs —config-set installed_paths ~/.composer/vendor/silverorange/coding-standard/src
-$ phpcs —config-set default_standard SilverorangeLegacy
 ```
 
 ### 3. create a phpcs.xml
@@ -96,6 +86,32 @@ script:
       $(git diff --diff-filter=ACRM --name-only HEAD~1)
 ---
 ```
+
+Global Usage
+------------
+The `SilverorangeLegacy` standard can be set to be used by default if no
+per-project configuration is available.
+
+### 1. Install standard globally
+```sh
+$ composer global require silverorange/coding-standard:dev-master
+```
+
+### 2. Register the standard with PHP Code Sniffer
+
+You can use commas to delineate multiple paths.
+
+```sh
+$ phpcs --config-set installed_paths ~/.composer/vendor/silverorange/coding-standard/src
+```
+
+### 3. Set the global phpcs standard
+```sh
+$ phpcs --config-set default_standard SilverorangeLegacy
+```
+
+Now calling `phpcs` with no additional arguments will use the
+`SilverorangeLegacy` standard.
 
 Standards
 ---------
