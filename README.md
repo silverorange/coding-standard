@@ -5,9 +5,10 @@ silverorange Coding Standards
 Coding standards for silverorange PHP projects. These are standards to be used
 with the [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer/wiki) tool.
 
-Usage
------
-To use these rules for a project:
+Per-Project Usage
+-----------------
+per-project configuration is preferred over global configuration but does
+require support to be added to the project. To use these rules for a project:
 
 ### 1. install as a require-dev dependency using composer
 ```sh
@@ -86,6 +87,32 @@ script:
 ---
 ```
 
+Global Usage
+------------
+The `SilverorangeLegacy` standard can be set to be used by default if no
+per-project configuration is available.
+
+### 1. Install standard globally
+```sh
+$ composer global require silverorange/coding-standard:dev-master
+```
+
+### 2. Register the standard with PHP Code Sniffer
+
+You can use commas to delineate multiple paths.
+
+```sh
+$ phpcs --config-set installed_paths ~/.composer/vendor/silverorange/coding-standard/src
+```
+
+### 3. Set the global phpcs standard
+```sh
+$ phpcs --config-set default_standard SilverorangeLegacy
+```
+
+Now calling `phpcs` with no additional arguments will use the
+`SilverorangeLegacy` standard.
+
 Standards
 ---------
 Three standards are provided:
@@ -152,3 +179,12 @@ If you are using Sublime Text:
 ```
 
 This will allow you to use different rulesets with different projects.
+
+Atom Setup
+----------
+If you are using Atom:
+
+1. Set up linter-phpcs as described [here](https://atom.io/packages/linter-phpcs).
+
+2. Open the package settings for linter-phpcs and set `Coding Standard Or Config File` to `SilverorangeLegacy` or whichever current coding standard you are using.  Also set the `Tab Width` field to `4`
+
