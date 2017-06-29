@@ -12,7 +12,7 @@ require support to be added to the project. To use these rules for a project:
 
 ### 1. install as a require-dev dependency using composer
 ```sh
-$ composer require --dev silverorange/coding-standard squizlabs/phpcs
+$ composer require --dev silverorange/coding-standard squizlabs/php_codesniffer
 ```
 
 ### 2. add a `post-install-cmd` and `post-update-cmd` to register the coding standard with phpcs
