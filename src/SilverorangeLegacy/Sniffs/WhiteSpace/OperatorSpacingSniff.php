@@ -1,4 +1,10 @@
 <?php
+namespace SilverorangeLegacy\Sniffs\WhiteSpace;
+
+use PHP_CodeSniffer\Standards\Squiz\Sniffs\WhiteSpace\OperatorSpacingSniff as SquizOperatorSpacingSniff;
+use PHP_CodeSniffer\Sniffs\Sniff;
+use PHP_CodeSniffer\Files\File;
+use PHP_CodeSniffer\Util\Tokens;
 
 /**
  * Contains code adapted from Squiz_Sniffs_WhiteSpace_OperatorSpacingSniff
@@ -32,9 +38,9 @@
  *  POSSIBILITY OF SUCH DAMAGE.
  */
 
-class SilverorangeLegacy_Sniffs_WhiteSpace_OperatorSpacingSniff extends Squiz_Sniffs_WhiteSpace_OperatorSpacingSniff
+class OperatorSpacingSniff extends SquizOperatorSpacingSniff
 {
-    public function process(PHP_CodeSniffer_File $phpcsFile, $stackPtr)
+    public function process(File $phpcsFile, $stackPtr)
     {
         $tokens = $phpcsFile->getTokens();
 
@@ -151,22 +157,22 @@ class SilverorangeLegacy_Sniffs_WhiteSpace_OperatorSpacingSniff extends Squiz_Sn
                 return;
             }
 
-            if (isset(PHP_CodeSniffer_Tokens::$operators[$tokens[$prev]['code']]) === true) {
+            if (isset(Tokens::$operators[$tokens[$prev]['code']]) === true) {
                 // Just trying to operate on a negative value; eg. ($var * -1).
                 return;
             }
 
-            if (isset(PHP_CodeSniffer_Tokens::$comparisonTokens[$tokens[$prev]['code']]) === true) {
+            if (isset(Tokens::$comparisonTokens[$tokens[$prev]['code']]) === true) {
                 // Just trying to compare a negative value; eg. ($var === -1).
                 return;
             }
 
-            if (isset(PHP_CodeSniffer_Tokens::$booleanOperators[$tokens[$prev]['code']]) === true) {
+            if (isset(Tokens::$booleanOperators[$tokens[$prev]['code']]) === true) {
                 // Just trying to compare a negative value; eg. ($var || -1 === $b).
                 return;
             }
 
-            if (isset(PHP_CodeSniffer_Tokens::$assignmentTokens[$tokens[$prev]['code']]) === true) {
+            if (isset(Tokens::$assignmentTokens[$tokens[$prev]['code']]) === true) {
                 // Just trying to assign a negative value; eg. ($var = -1).
                 return;
             }
@@ -207,7 +213,7 @@ class SilverorangeLegacy_Sniffs_WhiteSpace_OperatorSpacingSniff extends Squiz_Sn
             }
 
             $phpcsFile->recordMetric($stackPtr, 'Space before operator', 0);
-        } elseif (isset(PHP_CodeSniffer_Tokens::$assignmentTokens[$tokens[$stackPtr]['code']]) === false) {
+        } elseif (isset(Tokens::$assignmentTokens[$tokens[$stackPtr]['code']]) === false) {
             // Don't throw an error for assignments, because other standards allow
             // multiple spaces there to align multiple assignments.
             if ($tokens[($stackPtr - 2)]['line'] !== $tokens[$stackPtr]['line']) {
