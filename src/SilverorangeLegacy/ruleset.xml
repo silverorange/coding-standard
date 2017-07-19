@@ -86,11 +86,12 @@
 
   <!--rule ref="Squiz.ControlStructures.ControlSignature"/-->
 
-  <!--
-    Use Squiz instead of Generic to prevent empty do/while/if/for and allow
-    empty catch.
-  -->
-  <rule ref="Squiz.CodeAnalysis.EmptyStatement"/>
+  <rule ref="Generic.CodeAnalysis.EmptyStatement"/>
+
+  <!-- We allow empty catch statements -->
+  <rule ref="Generic.CodeAnalysis.EmptyStatement.DetectedCATCH">
+    <severity>0</severity>
+  </rule>
 
   <rule ref="Squiz.Functions.FunctionDuplicateArgument"/>
 
