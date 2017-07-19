@@ -1,7 +1,7 @@
 <?php
 namespace SilverorangeLegacy\Sniffs\WhiteSpace;
 
-use PHP_CodeSniffer\Standards\Squiz\Sniffs\Whitespace\OperatorSpacingSniff as SquizOperatorSpacingSniff;
+use PHP_CodeSniffer\Standards\Squiz\Sniffs\WhiteSpace\OperatorSpacingSniff as SquizOperatorSpacingSniff;
 use PHP_CodeSniffer\Sniffs\Sniff;
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Util\Tokens;
