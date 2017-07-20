@@ -63,7 +63,7 @@ class ClassFileNameSniff extends SquizClassFileNameSniff
          * site structure usually have different class names
          */
         if ($fileName === '' ||
-            mb_strpos($phpcsFile->getFilename(), '/admin/components/') !== false) {
+            mb_stripos($phpcsFile->getFilename(), '/admin/components/') !== false) {
             return;
         }
         $tokens  = $phpcsFile->getTokens();
