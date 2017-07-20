@@ -10,11 +10,5 @@
   <file>./src</file>
 
   <rule ref="PSR2">
-    <!--
-      PHPCS sniff files can not entirely use PSR-2 because of the way classes
-      are mapped to sniff names.
-    -->
-    <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace" />
-    <exclude name="Squiz.Classes.ValidClassName.NotCamelCaps" />
   </rule>
 </ruleset>
