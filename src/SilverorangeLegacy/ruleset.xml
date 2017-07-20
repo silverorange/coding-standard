@@ -80,7 +80,6 @@
   <rule ref="Squiz.Classes.ClassDeclaration.FirstInterfaceSameLine">
     <severity>0</severity>
   </rule>
-  <rule ref="Squiz.Classes.ClassFileName"/>
   <rule ref="Squiz.Classes.SelfMemberReference"/>
   <rule ref="Squiz.Classes.ValidClassName"/>
 
@@ -144,4 +143,10 @@
      <property name="ignoreNewlines" type="boolean" value="true" />
     </properties>
   </rule>
+
+  <!-- Custom sniff that forces file names to match the class declared in them.
+       Customized for silverorange to ignore the rule if /admin/components/ is
+       present in the file path
+  -->
+  <rule ref="SilverorangeLegacy.Classes.ClassFileName"/>
 </ruleset>
