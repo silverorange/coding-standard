@@ -1,4 +1,5 @@
 <?php
+
 namespace SilverorangeLegacy\Sniffs\Classes;
 
 use PHP_CodeSniffer\Standards\Squiz\Sniffs\Classes\ClassFileNameSniff as
@@ -39,7 +40,6 @@ use PHP_CodeSniffer\Files\File;
  *  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  *  POSSIBILITY OF SUCH DAMAGE.
  */
-
 class ClassFileNameSniff extends SquizClassFileNameSniff
 {
     /**
@@ -54,22 +54,28 @@ class ClassFileNameSniff extends SquizClassFileNameSniff
     public function process(File $phpcsFile, $stackPtr)
     {
         $fullPath = basename($phpcsFile->getFilename());
-        $fileName = substr($fullPath, 0, strrpos($fullPath, '.'));
+        $fileName = mb_substr($fullPath, 0, mb_strrpos($fullPath, '.'));
+
+        /*
+         * Ignore filenames in two cases:
+         * No filename, probably means STDIN, can't do this check
+         * File path contains /admin/components/, which in the silverorange
+         * site structure usually have different class names
+         */
         if ($fileName === '' ||
-            strpos($phpcsFile->getFilename(), '/admin/components/') !== false) {
-            // No filename probably means STDIN, so we can't do this check.
+            mb_strpos($phpcsFile->getFilename(), '/admin/components/') !== false) {
             return;
         }
         $tokens  = $phpcsFile->getTokens();
         $decName = $phpcsFile->findNext(T_STRING, $stackPtr);
         if ($tokens[$decName]['content'] !== $fileName) {
             $error = '%s name doesn\'t match filename; expected "%s %s"';
-            $data  = array(
-                      ucfirst($tokens[$stackPtr]['content']),
-                      $tokens[$stackPtr]['content'],
-                      $fileName,
-                     );
+            $data = array(
+                ucfirst($tokens[$stackPtr]['content']),
+                $tokens[$stackPtr]['content'],
+                $fileName,
+            );
             $phpcsFile->addError($error, $stackPtr, 'NoMatch', $data);
         }
-    }//end process()
-}//end class
+    }
+}
