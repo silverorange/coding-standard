@@ -7,7 +7,7 @@ use PHP_CodeSniffer\Sniffs\Sniff;
 use PHP_CodeSniffer\Files\File;
 
 /**
- * Contains code from Squiz_Sniffs_Classes_ClassFileNameSniff
+ * Contains code from Squiz\Sniffs\Classes\ClassFileNameSniff
  * Tests that the file name and the name of the class declared in the file match
  * Ignored if filepath contains /admin/components/
  * Used under the following license:
