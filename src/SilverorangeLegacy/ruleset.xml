@@ -134,8 +134,8 @@
   <rule ref="SilverorangeLegacy.Classes.ClassFileName"/>
 
   <!--
-    Use Squiz instead of PRS2 to get required blank line after class
-    defintion.
+    Silverorange requires a blank line after class defintion, and also allows
+    the class to be extended on an indented new line.
   -->
   <rule ref="SilverorangeLegacy.Classes.ClassDeclaration"/>
   <rule ref="SilverorangeLegacy.Classes.ClassDeclaration.InterfaceSameLine">
@@ -150,5 +150,4 @@
   <rule ref="SilverorangeLegacy.Classes.ClassDeclaration.FirstInterfaceSameLine">
     <severity>0</severity>
   </rule>
-
 </ruleset>
