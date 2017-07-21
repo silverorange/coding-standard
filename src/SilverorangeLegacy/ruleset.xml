@@ -63,23 +63,6 @@
 
   <rule ref="PSR2.Classes.PropertyDeclaration"/>
 
-  <!--
-    Use Squiz instead of PRS2 to get required blank line after class
-    defintion.
-  -->
-  <rule ref="Squiz.Classes.ClassDeclaration"/>
-  <rule ref="Squiz.Classes.ClassDeclaration.InterfaceSameLine">
-    <severity>0</severity>
-  </rule>
-  <rule ref="Squiz.Classes.ClassDeclaration.InterfaceWrongIndent">
-    <severity>0</severity>
-  </rule>
-  <rule ref="Squiz.Classes.ClassDeclaration.ImplementsLine">
-    <severity>0</severity>
-  </rule>
-  <rule ref="Squiz.Classes.ClassDeclaration.FirstInterfaceSameLine">
-    <severity>0</severity>
-  </rule>
   <rule ref="Squiz.Classes.SelfMemberReference"/>
   <rule ref="Squiz.Classes.ValidClassName"/>
 
@@ -149,4 +132,23 @@
        present in the file path
   -->
   <rule ref="SilverorangeLegacy.Classes.ClassFileName"/>
+
+  <!--
+    Use Squiz instead of PRS2 to get required blank line after class
+    defintion.
+  -->
+  <rule ref="SilverorangeLegacy.Classes.ClassDeclaration"/>
+  <rule ref="SilverorangeLegacy.Classes.ClassDeclaration.InterfaceSameLine">
+    <severity>0</severity>
+  </rule>
+  <rule ref="SilverorangeLegacy.Classes.ClassDeclaration.InterfaceWrongIndent">
+    <severity>0</severity>
+  </rule>
+  <rule ref="SilverorangeLegacy.Classes.ClassDeclaration.ImplementsLine">
+    <severity>0</severity>
+  </rule>
+  <rule ref="SilverorangeLegacy.Classes.ClassDeclaration.FirstInterfaceSameLine">
+    <severity>0</severity>
+  </rule>
+
 </ruleset>
