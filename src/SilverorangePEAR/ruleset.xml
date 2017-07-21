@@ -3,23 +3,12 @@
   <description>Silverorange PEAR coding standard for packages missing documentation</description>
 
   <!--
-    Import entire PEAR standard.
+    Import entire PEAR standard, excluding rules concerning doc comments.
   -->
-  <rule ref="PEAR" />
-
-  <!--
-    Ignore rules concerning doc comments
-  -->
-  <rule ref="Generic.Commenting.DocComment">
-    <severity>0</severity>
-  </rule>
-  <rule ref="PEAR.Commenting.FileComment">
-    <severity>0</severity>
-  </rule>
-  <rule ref="PEAR.Commenting.ClassComment">
-    <severity>0</severity>
-  </rule>
-  <rule ref="PEAR.Commenting.FunctionComment">
-    <severity>0</severity>
+  <rule ref="PEAR">
+    <exclude name="Generic.Commenting.DocComment" />
+    <exclude name="PEAR.Commenting.FileComment" />
+    <exclude name="PEAR.Commenting.ClassComment" />
+    <exclude name="PEAR.Commenting.FunctionComment" />
   </rule>
 </ruleset>
