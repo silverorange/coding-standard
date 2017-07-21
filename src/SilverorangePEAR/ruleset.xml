@@ -11,6 +11,9 @@
     <exclude name="PEAR.Commenting.FunctionComment" />
   </rule>
 
+  <!--
+    Allow for class comments apart from category, author, and link tags
+  -->
   <rule ref="PEAR.Commenting.ClassComment.MissingCategoryTag">
     <severity>0</severity>
   </rule>
