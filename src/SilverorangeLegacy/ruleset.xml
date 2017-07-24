@@ -129,7 +129,11 @@
   </rule>
   <rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
   <rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
-  <rule ref="Squiz.WhiteSpace.ObjectOperatorSpacing"/>
+  <rule ref="Squiz.WhiteSpace.ObjectOperatorSpacing">
+    <properties>
+      <property name="ignoreNewlines" type="boolean" value="true" />
+    </properties>
+  </rule>
   <rule ref="Squiz.WhiteSpace.ScopeClosingBrace"/>
   <rule ref="Squiz.WhiteSpace.ScopeKeywordSpacing"/>
   <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
