@@ -79,6 +79,9 @@
   <rule ref="Squiz.Classes.ClassDeclaration.FirstInterfaceSameLine">
     <severity>0</severity>
   </rule>
+  <rule ref="Squiz.Classes.ClassDeclaration.SpaceBeforeName">
+    <severity>0</severity>
+  </rule>
   <rule ref="Squiz.Classes.SelfMemberReference"/>
   <rule ref="Squiz.Classes.ValidClassName"/>
 
