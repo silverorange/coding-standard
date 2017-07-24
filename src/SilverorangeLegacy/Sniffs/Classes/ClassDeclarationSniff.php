@@ -40,7 +40,6 @@ use PHP_CodeSniffer\Files\File;
  *  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  *  POSSIBILITY OF SUCH DAMAGE.
  */
-
 class ClassDeclarationSniff extends PEARClassDeclarationSniff
 {
     /**
@@ -103,12 +102,12 @@ class ClassDeclarationSniff extends PEARClassDeclarationSniff
                     && $spaces !== 1
                 ) {
                     $prevContent = strtolower($tokens[($stackPtr - 2)]['content']);
-                    $error       = 'Expected 1 space between %s and %s keywords; %s found';
-                    $data        = array(
-                                    $prevContent,
-                                    $stackPtrType,
-                                    $spaces,
-                                   );
+                    $error = 'Expected 1 space between %s and %s keywords; %s found';
+                    $data = array(
+                        $prevContent,
+                        $stackPtrType,
+                        $spaces,
+                    );
                     $fix = $phpcsFile->addFixableError($error, $stackPtr, 'SpaceBeforeKeyword', $data);
                     if ($fix === true) {
                         $phpcsFile->fixer->replaceToken(($stackPtr - 1), ' ');
@@ -118,11 +117,11 @@ class ClassDeclarationSniff extends PEARClassDeclarationSniff
                 || $tokens[($stackPtr - 2)]['code'] === T_FINAL
             ) {
                 $prevContent = strtolower($tokens[($stackPtr - 2)]['content']);
-                $error       = 'Expected 1 space between %s and %s keywords; newline found';
-                $data        = array(
-                                $prevContent,
-                                $stackPtrType,
-                               );
+                $error = 'Expected 1 space between %s and %s keywords; newline found';
+                $data = array(
+                    $prevContent,
+                    $stackPtrType,
+                );
                 $fix = $phpcsFile->addFixableError($error, $stackPtr, 'NewlineBeforeKeyword', $data);
                 if ($fix === true) {
                     $phpcsFile->fixer->replaceToken(($stackPtr - 1), ' ');
@@ -148,10 +147,10 @@ class ClassDeclarationSniff extends PEARClassDeclarationSniff
             $found = strlen($gap);
             $error = 'Expected 1 space between %s keyword and %s name; %s found';
             $data  = array(
-                      $stackPtrType,
-                      $stackPtrType,
-                      $found,
-                     );
+                $stackPtrType,
+                $stackPtrType,
+                $found,
+            );
             $fix = $phpcsFile->addFixableError($error, $stackPtr, 'SpaceAfterKeyword', $data);
             if ($fix === true) {
                 $phpcsFile->fixer->replaceToken(($stackPtr + 1), ' ');
@@ -164,9 +163,9 @@ class ClassDeclarationSniff extends PEARClassDeclarationSniff
                 $found = strlen($gap);
                 $error = 'Expected 1 space after %s name; %s found';
                 $data  = array(
-                          $stackPtrType,
-                          $found,
-                         );
+                    $stackPtrType,
+                    $found,
+                );
                 $fix = $phpcsFile->addFixableError($error, $className, 'SpaceAfterName', $data);
                 if ($fix === true) {
                     $phpcsFile->fixer->replaceToken(($className + 1), ' ');
