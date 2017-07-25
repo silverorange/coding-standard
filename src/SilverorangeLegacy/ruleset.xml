@@ -96,8 +96,7 @@
 
   <rule ref="Squiz.Functions.FunctionDuplicateArgument"/>
   <rule ref="Squiz.Functions.FunctionDeclaration"/>
-  <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
-  <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.NewlineBeforeOpenBrace"/>
+  <rule ref="Squiz.Functions.MultiLineFunctionDeclaration"/>
 
   <rule ref="Squiz.Operators.ValidLogicalOperators"/>
 
