@@ -55,7 +55,8 @@ Post install and post update are both required because `composer install` withou
 The code lint pipeline stage should be added before other pipeline stages so
 they do not run if the code lint fails. See the
 [Jenkins Pipeline Manual](https://jenkins.io/doc/book/pipeline/) for help
-with adding a step to an existing pipeline, or for help creating a new pipeline.
+with adding a stage to an existing pipeline, or for help creating a new
+pipeline.
 
 
 For new packages:
