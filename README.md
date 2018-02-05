@@ -51,40 +51,68 @@ Post install and post update are both required because `composer install` withou
 }
 ```
 
-### 5. create a .travis.yml file to enforce the rules
+### 5. add a Jenkins pipeline stage to automatically lint files
+The code lint pipeline stage should be added before other pipeline stages so
+they do not run if the code lint fails. See the
+[Jenkins Pipeline Manual](https://jenkins.io/doc/book/pipeline/) for help
+with adding a stage to an existing pipeline, or for help creating a new
+pipeline.
+
+
 For new packages:
-```yml
-language: php
-php:
-  - '5.6'
-install: composer install
-script:
-  - >-
-      ./vendor/bin/phpcs
-      --standard=Silverorange
-      --encoding=utf-8
-      --warning-severity=0
-      --extensions=php
-      $(git diff--diff-filter=ACRM --name-only HEAD~1)
----
+```groovy
+stage('Lint Modified Files') {
+  when {
+    not {
+      branch 'master'
+    }
+  }
+  steps {
+    sh '''
+      master_sha=$(git rev-parse origin/master)
+      newest_sha=$(git rev-parse HEAD)
+      files = $(git diff --diff-filter=ACRM --name-only $master_sha...$newest_sha)
+
+      if [ -n "$files" ]; then
+        ./vendor/bin/phpcs \
+          --standard=Silverorange \
+          --tab-width=4 \
+          --encoding=utf-8 \
+          --warning-severity=0 \
+          --extensions=php \
+          $files
+      fi
+    '''
+  }
+}
 ```
 
 For legacy packages:
-```yml
-language: php
-php:
-  - '5.6'
-install: composer install
-script:
-  - >-
-      ./vendor/bin/phpcs
-      --standard=SilverorangeTransitional
-      --tab-width=4
-      --encoding=utf-8
-      --warning-severity=0
-      --extensions=php
-      $(git diff --diff-filter=ACRM --name-only HEAD~1)
----
+```groovy
+stage('Lint Modified Files') {
+  when {
+    not {
+      branch 'master'
+    }
+  }
+  steps {
+    sh '''
+      master_sha=$(git rev-parse origin/master)
+      newest_sha=$(git rev-parse HEAD)
+      files = $(git diff --diff-filter=ACRM --name-only $master_sha...$newest_sha)
+
+      if [ -n "$files" ]; then
+        ./vendor/bin/phpcs \
+          --standard=SilverorangeTransitional \
+          --tab-width=4 \
+          --encoding=utf-8 \
+          --warning-severity=0 \
+          --extensions=php \
+          $files
+      fi
+    '''
+  }
+}
 ```
 
 Global Usage
