@@ -51,7 +51,7 @@ Post install and post update are both required because `composer install` withou
 }
 ```
 
-### 5. add Jenkins a pipeline step to automatically lint files
+### 5. add a Jenkins pipeline step to automatically lint files
 For new packages:
 ```groovy
 stage('Lint Modified Files') {
