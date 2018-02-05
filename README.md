@@ -96,7 +96,7 @@ stage('Lint Modified Files') {
 
       if [ -n "$files" ]; then
         ./vendor/bin/phpcs \
-          --standard=Silverorange \
+          --standard=SilverorangeTransitional \
           --tab-width=4 \
           --encoding=utf-8 \
           --warning-severity=0 \
