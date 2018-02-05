@@ -52,6 +52,12 @@ Post install and post update are both required because `composer install` withou
 ```
 
 ### 5. add a Jenkins pipeline step to automatically lint files
+The code lint pipeline step should be added before other pipeline stages so
+they do not run if the code lint fails. See the
+[Jenkins Pipeline Manual](https://jenkins.io/doc/book/pipeline/) for help
+with adding a step to an existing pipeline, or for help creating a new pipeline.
+
+
 For new packages:
 ```groovy
 stage('Lint Modified Files') {
