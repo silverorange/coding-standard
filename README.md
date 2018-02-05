@@ -71,7 +71,7 @@ stage('Lint Modified Files') {
     sh '''
       master_sha=$(git rev-parse origin/master)
       newest_sha=$(git rev-parse HEAD)
-      files = $(git diff --diff-filter=ACRM --name-only $master_sha...$newest_sha)
+      files=$(git diff --diff-filter=ACRM --name-only $master_sha...$newest_sha)
 
       if [ -n "$files" ]; then
         ./vendor/bin/phpcs \
@@ -99,7 +99,7 @@ stage('Lint Modified Files') {
     sh '''
       master_sha=$(git rev-parse origin/master)
       newest_sha=$(git rev-parse HEAD)
-      files = $(git diff --diff-filter=ACRM --name-only $master_sha...$newest_sha)
+      files=$(git diff --diff-filter=ACRM --name-only $master_sha...$newest_sha)
 
       if [ -n "$files" ]; then
         ./vendor/bin/phpcs \
