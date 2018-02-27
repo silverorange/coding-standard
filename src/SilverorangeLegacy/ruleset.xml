@@ -90,7 +90,7 @@
   <rule ref="Generic.CodeAnalysis.EmptyStatement"/>
 
   <!-- We allow empty catch statements -->
-  <rule ref="Generic.CodeAnalysis.EmptyStatement.DetectedCATCH">
+  <rule ref="Generic.CodeAnalysis.EmptyStatement.DetectedCatch">
     <severity>0</severity>
   </rule>
 
