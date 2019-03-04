@@ -4,7 +4,7 @@
 
   <rule ref="PSR2"/>
 
-  <!-- required for prettier formatting -->
+  <!-- Required for prettier formatting. -->
   <rule ref="PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace">
     <severity>0</severity>
   </rule>
