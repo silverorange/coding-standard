@@ -196,6 +196,11 @@ addition to PSR-2 rules, additional checks are included to promote code
 quality and consistency. This standard should be used for all new silverorange
 PHP packages.
 
+### SilverorangePEAR
+
+Based on `PEAR` standard but updated to not require method and class
+documentation. This should _not_ be used for new packages.
+
 ## Sublime Setup
 
 If you are using Sublime Text:
