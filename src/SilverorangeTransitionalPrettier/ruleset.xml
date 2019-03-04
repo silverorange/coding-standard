@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<ruleset name="SilverorangeTransitionalPrettier">
+  <description>Silverorange coding standards for legacy packages based on the PSR-2 standard supporting Prettier code auto-formatting.</description>
+
+  <rule ref="SilverorangePrettier"/>
+
+  <!-- Transitional code does not use namespaces. -->
+  <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
+    <severity>0</severity>
+  </rule>
+
+  <!-- Custom sniff that forces file names to match the class declared in them.
+       Customized for silverorange to ignore the rule if /admin/components/ is
+       present in the file path. -->
+  <rule ref="SilverorangeLegacy.Classes.ClassFileName"/>
+</ruleset>
