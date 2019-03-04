@@ -153,7 +153,7 @@ Now calling `phpcs` with no additional arguments will use the
 
 ## Standards
 
-Three standards are provided:
+Several standards are provided:
 
 ### SilverorangeLegacy
 
@@ -170,15 +170,31 @@ added to legacy packages follows best practices within the legacy guidelines.
 This includes rules that will not pass for the entire project, but should pass
 for all modified files in a new pull request.
 
+### SilverorangeTransitionalPrettier
+
+Based on [PSR-2](http://www.php-fig.org/psr/psr-2/) standard but updated to
+support [Prettier code auto-formatting](https://github.com/prettier/plugin-php).
+The PSR-4 autoloading rules of PSR-2 are relaxed to allow our legacy code to
+comply with the ruleset. This standard should be used for all legacy
+silverorange PHP packages.
+
 ### Silverorange
 
-Based on [PSR-2](http://www.php-fig.org/psr/psr-2/). This should be used for
-all new silverorange PHP packages. PSR-2 builds on, and includes all rules
-from [PSR-1](http://www.php-fig.org/psr/psr-1/)
+Based on [PSR-2](http://www.php-fig.org/psr/psr-2/). PSR-2 builds on, and
+includes all rules from [PSR-1](http://www.php-fig.org/psr/psr-1/), The
+`Silverorange` standard extends PSR-2 to add forbidden functions.
 
 For autoloading classes, projects must follow
 [PSR-4](http://www.php-fig.org/psr/psr-4/). This allows efficient auto-loading
 and promotes organizing code using namespaces.
+
+### SilverorangePrettier
+
+Based on `Silverorange` standard but updated to support
+[Prettier code auto-formatting](https://github.com/prettier/plugin-php). In
+addition to PSR-2 rules, additional checks are included to promote code
+quality and consistency. This standard should be used for all new silverorange
+PHP packages.
 
 ## Sublime Setup
 
