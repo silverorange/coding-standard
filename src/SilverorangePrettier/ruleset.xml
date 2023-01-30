@@ -9,6 +9,15 @@
     <severity>0</severity>
   </rule>
 
+  <!-- Required for prettier formatting. Allows breaking default argument
+       assignment across multiple lines. -->
+  <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpaceAfterEquals">
+    <severity>0</severity>
+  </rule>
+  <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.Indent">
+    <severity>0</severity>
+  </rule>
+
   <rule ref="Generic.Classes.DuplicateClassName"/>
 
   <rule ref="Generic.CodeAnalysis.UnconditionalIfStatement"/>
